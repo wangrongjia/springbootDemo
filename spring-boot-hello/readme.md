@@ -10,10 +10,10 @@
 ### step1 pom.xml添加web依赖
 
 ```xml
-		<dependency>
-	        <groupId>org.springframework.boot</groupId>
-	        <artifactId>spring-boot-starter-web</artifactId>
- 		</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
 ```
 
 ### step2 添加控制层
@@ -38,22 +38,22 @@ tips:
 ### step3 热启动支持
 
 ```xml
-	    <dependency>
-	        <groupId>org.springframework.boot</groupId>
-	        <artifactId>spring-boot-devtools</artifactId>
-	        <optional>true</optional>
-   		</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <optional>true</optional>
+</dependency>
 ```
 
 ```xml
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!-- 热启动支持 -->
-	            <configuration>
-                	<fork>true</fork>
-            	</configuration>
-			</plugin>
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <!-- 热启动支持 -->
+    <configuration>
+        	<fork>true</fork>
+    </configuration>
+</plugin>
 ```
 
 

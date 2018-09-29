@@ -1,4 +1,4 @@
-这是一个由 SPRING INITIALIZR([https://start.spring.io])在线生成的maven project with java and springboot 2.0.5
+这是一个由 SPRING INITIALIZR  [https://start.spring.io](https://start.spring.io) 在线生成的maven project with java and springboot 2.0.5
 其基础结构共三个模块:
 
 >src/main/java  程序开发以及主程序入口
@@ -29,7 +29,7 @@ public class HelloController {
 }
 ```
 
-启动应用程序，访问 [http://localhost:8080/hello] 
+启动应用程序，访问 [http://localhost:8080/hello](http://localhost:8080/hello)
 
 tips:
 

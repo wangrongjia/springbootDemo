@@ -5,3 +5,6 @@
 
 ## 2. springboot web入门
 [https://github.com/wxpp/springbootDemo/tree/master/spring-boot-web](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-web)
+
+## 3. springboot 使用redis
+[https://github.com/wxpp/springbootDemo/tree/master/spring-boot-web](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-web)

@@ -7,4 +7,4 @@
 [https://github.com/wxpp/springbootDemo/tree/master/spring-boot-web](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-web)
 
 ## 3. springboot 使用redis
-[https://github.com/wxpp/springbootDemo/tree/master/spring-boot-web](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-web)
+[https://github.com/wxpp/springbootDemo/tree/master/spring-boot-redis](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-redis)

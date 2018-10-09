@@ -169,6 +169,7 @@ class User {
 ```
 
 下载reddis desktop manager,打开，可以看到生成了string类型的键值对   aaa - 111 和 com.codinger - user    
+
 上面是主动向reddis写缓存  
 
 调用方法的时候自动缓存
@@ -188,7 +189,7 @@ public class RedisController {
 ```
 
 浏览器第一次访问/testcache 路径时，可以看到缓存的生成
-![](_v_images/_1539068226_18709.png)
+
 
 
 

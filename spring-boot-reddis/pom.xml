@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.codinger</groupId>
-	<artifactId>spring-boot-reddis</artifactId>
+	<artifactId>spring-boot-redis</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-reddis</name>
+	<name>spring-boot-redis</name>
 	<description>templete project for Spring Boot</description>
 
 	<parent>

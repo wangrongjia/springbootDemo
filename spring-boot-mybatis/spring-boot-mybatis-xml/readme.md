@@ -76,7 +76,7 @@ application.properties
 mybatis.config-locations=classpath:mybatis/mybatis-config.xml
 mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
 #扫描pojo类的位置,在此处指明扫描实体类的包，在mapper中就可以不用写pojo类的全路径名了
-mybatis.type-aliases-package=com.neo.entity
+mybatis.type-aliases-package=com.codinger.entity
 
 spring.datasource.url=jdbc:mysql://localhost:3306/test
 spring.datasource.username=root
@@ -110,7 +110,7 @@ CREATE TABLE `users` (
   `user_sex` varchar(32) DEFAULT NULL,
   `nick_name` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ```
 
 在resurces目录下新建mybatis-generator路径  
@@ -169,15 +169,19 @@ generatorConfig.xml
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- 生成mapxml文件 -->
-        <sqlMapGenerator targetPackage="mybatis" targetProject="${resources}" >
+        <sqlMapGenerator targetPackage="mybatis/mapper" targetProject="${resources}" >
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
         <!-- 生成mapxml对应client，也就是接口dao -->
         <javaClientGenerator targetPackage="com.codinger.mapper" targetProject="${project}" type="XMLMAPPER" >
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
-        <!-- table可以有多个,每个数据库中的表都可以写一个table，tableName表示要匹配的数据库表,也可以在tableName属性中通过使用%通配符来匹配所有数据库表,只有匹配的表才会自动生成文件 -->
-        <table tableName="users" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true">
+        <!-- table可以有多个,每个数据库中的表都可以写一个table，tableName表示要匹配的数据库表,
+        	也可以在tableName属性中通过使用%通配符来匹配所有数据库表,只有匹配的表才会自动生成文件
+        	domianOejectName 可以自定义生成文件的名字 -->
+        <table tableName="users" domainObjectName="User" enableCountByExample="true" 
+            enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" 
+            selectByExampleQueryId="true">
             <property name="useActualColumnNames" value="false" />
             <!-- 数据库表主键 -->
             <generatedKey column="id" sqlStatement="Mysql" identity="true" />
@@ -185,6 +189,7 @@ generatorConfig.xml
     </context>
 </generatorConfiguration>
 ```
+**需要注意此处配置的mapper xml 文件生成位置 mybatis/mapper 需要和application.properties 中mybatis.mapper-locations 的值完全一致**
 
 mybatisGeneratorinit.properties
 ```xml
@@ -195,13 +200,56 @@ project =src/main/java
 resources=src/main/resources
 #根据数据库中的表生成对应的pojo类、dao、mapper
 jdbc_driver =com.mysql.jdbc.Driver
-jdbc_url=jdbc:mysql://localhost:3306/demo
+jdbc_url=jdbc:mysql://localhost:3306/test
 jdbc_user=root
 jdbc_password=123456
 ```
 
 选中项目  run as --> maven build 键入: mybatis-generator:generate  
 生成mapper xml文件  mapper文件  entity文件
+
+测试类：
+```java
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class UserMapperTest {
+
+	@Autowired
+	private UserMapper UserMapper;
+
+	@Test
+	public void testInsert() throws Exception {
+		UserMapper.insert(new User("a1","111111","man","a1"));
+		UserMapper.insert(new User("a2","222222","man","a2"));
+		UserMapper.insert(new User("a3","333333","man","a3"));
+
+		Assert.assertEquals(3, UserMapper.selectAll().size());
+	}
+
+	@Test
+	public void testQuery() throws Exception {
+		List<User> users = UserMapper.selectAll();
+		if(users==null || users.size()==0){
+			System.out.println("is null");
+		}else{
+			System.out.println(users.toString());
+		}
+	}
+	
+	
+	@Test
+	public void testUpdate() throws Exception {
+		User user = UserMapper.selectByPrimaryKey(2l);
+		System.out.println(user.toString());
+		user.setNickName("codinger");
+		UserMapper.updateByPrimaryKey(user);
+		Assert.assertTrue(("codinger".equals(UserMapper.selectByPrimaryKey(2l).getNickName())));
+	}
+
+}
+```
+
+
 
 
 

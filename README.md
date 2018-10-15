@@ -20,3 +20,6 @@
 
 ## 7. springboot 使用mongodb
 [https://github.com/wxpp/springbootDemo/tree/master/spring-boot-mongodb](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-mongodb)
+
+## 8. springboot 使用shiro
+[https://github.com/wxpp/springbootDemo/tree/master/spring-boot-shiro](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-shiro)

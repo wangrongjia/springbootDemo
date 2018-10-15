@@ -11,3 +11,6 @@
 
 ## 4. springboot 使用mybatis
 [https://github.com/wxpp/springbootDemo/tree/master/spring-boot-mybatis](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-mybatis)
+
+## 5. springboot 使用定时
+[https://github.com/wxpp/springbootDemo/tree/master/spring-boot-scheduler](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-scheduler)

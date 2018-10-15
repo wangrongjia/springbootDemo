@@ -12,5 +12,11 @@
 ## 4. springboot 使用mybatis
 [https://github.com/wxpp/springbootDemo/tree/master/spring-boot-mybatis](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-mybatis)
 
-## 5. springboot 使用定时
+## 5. springboot 使用定时任务
 [https://github.com/wxpp/springbootDemo/tree/master/spring-boot-scheduler](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-scheduler)
+
+## 6. springboot 使用rabbitmq
+[https://github.com/wxpp/springbootDemo/tree/master/spring-boot-rabbitmq](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-rabbitmq)
+
+## 7. springboot 使用mongodb
+[https://github.com/wxpp/springbootDemo/tree/master/spring-boot-mongodb](https://github.com/wxpp/springbootDemo/tree/master/spring-boot-mongodb)
